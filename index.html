@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon para la pestaña del navegador -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <!-- Hoja de estilos generada por Tailwind CSS -->
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body
+    class="bg-Blue-700 h-screen grid place-content-center font-Roboto text-Blue-800"
+  >
+    <!-- Sección principal del formulario de suscripción -->
+    <section
+      class="w-[375px] sm:w-[608px] sm:rounded-[36px] bg-White sm:p-10 lg:w-[908px] lg:flex lg:flex-row-reverse lg:gap-16"
+    >
+      <!-- Imagen ilustrativa que cambia según el tamaño de pantalla -->
+      <picture>
+        <source
+          media="(min-width: 1024px)"
+          srcset="./assets/images/illustration-sign-up-desktop.svg"
+        />
+        <source
+          media="(min-width: 640px)"
+          srcset="./assets/images/illustration-sign-up-tablet.svg"
+        />
+        <img
+          src="./assets/images/illustration-sign-up-mobile.svg"
+          alt="illustration sign up"
+        />
+      </picture>
+      <!-- El atributo alt en la etiqueta <img> dentro de <picture> se aplica a todas las imágenes de las fuentes -->
+      <!-- Es recomendable usar etiquetas semánticas de HTML siempre que sea posible -->
+      <!-- El orden de las etiquetas <source> dentro de <picture> debe ir de mayor a menor resolución -->
+
+      <!-- Contenido del formulario y descripción -->
+      <div class="p-6 py-8 sm:p-0">
+        <h1 class="text-[2rem] font-bold mb-6 sm:mt-10">Stay updated!</h1>
+        <p class="mb-6">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul class="mb-10">
+          <li class="flex items-start gap-4">
+            <img src="./assets/images/icon-list.svg" alt="icon list" />
+            <p>Product discovery and building what matters</p>
+          </li>
+          <li class="flex items-start gap-4">
+            <img src="./assets/images/icon-list.svg" alt="icon list" />
+            <p>Measuring to ensure updates are a success</p>
+          </li>
+          <li class="flex items-start gap-4">
+            <img src="./assets/images/icon-list.svg" alt="icon list" />
+            <p>And much more!</p>
+          </li>
+        </ul>
+        <!-- Formulario de suscripción al newsletter -->
+        <form class="flex flex-col relative" action="">
+          <label class="font-bold text-xs mb-2" for="email"
+            >Email address</label
+          >
+          <!-- Campo de entrada para el email del usuario -->
+          <input
+            class="border border-Grey rounded-lg px-6 py-4 mb-6 invalid:bg-Red/20 invalid:text-Red invalid:border-Red focus:outline focus:invalid:outline-Red peer"
+            type="email"
+            id="emailInput"
+            name="email"
+            placeholder="email@company.com"
+          />
+          <!-- Mensaje de error que se muestra si el email no es válido -->
+          <p
+            class="text-Red text-xs hidden peer-invalid:block absolute top-0 right-0"
+          >
+            Valid email required
+          </p>
+          <!-- La propiedad peer de Tailwind permite mostrar este mensaje solo si el input es inválido -->
+
+          <!-- Botón para enviar el formulario -->
+          <input
+            class="bg-Blue-700 text-White rounded-lg py-4 cursor-pointer hover:bg-linear-65 from-pink-500 to-Red"
+            type="submit"
+            value="Subscribe to monthly newsletter"
+          />
+          <!-- Es más semántico usar un input submit que un botón dentro de un formulario -->
+        </form>
+      </div>
+    </section>
+
+    <!-- Modal de éxito que aparece tras suscribirse -->
+    <dialog
+      class="pt-[125px] p-10 w-[375px] inset-0 m-auto border sm:w-[504px] sm:p-10 sm:rounded-3xl"
+    >
+      <img
+        class="mb-8"
+        src="./assets/images/icon-success.svg"
+        alt="icon success"
+      />
+      <h2 class="font-bold text-[2.5rem] mb-8 sm:mb-6">
+        Thanks for subscribing!
+      </h2>
+      <p class="mb-[160px] sm:mb-8">
+        A confirmation email has been sent to
+        <!-- Este span se actualiza dinámicamente con el email ingresado por el usuario -->
+        <span class="font-bold" id="userEmail">ash@loremcompany.com</span>.
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+      <!-- Botón para cerrar el modal y volver al formulario -->
+      <button
+        class="bg-Blue-700 text-White rounded-lg py-4 w-full cursor-pointer hover:bg-linear-65 from-pink-500 to-Red"
+        id="dismissBtn"
+      >
+        Dismiss message
+      </button>
+    </dialog>
+
+    <!-- Pie de página con créditos -->
+    <div class="attribution text-White">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/ElenaGonzalez2000">Elena Gonzalez</a>.
+    </div>
+
+    <!-- Script principal de la aplicación -->
+    <script type="module" src="./dist/main.js"></script>
+  </body>
+</html>

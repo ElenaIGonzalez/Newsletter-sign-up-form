@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  },
+  "scripts": {
+    "tl-watch": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "ts-watch": "npx tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "name": "newsletter-sign-up-with-success-message",
+  "version": "1.0.0",
+  "description": "![Design preview for the Newsletter sign-up form with success message coding challenge](./preview.jpg)",
+  "main": "main.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "types": "./main.d.ts"
+}
